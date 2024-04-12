@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "selenium-webdriver": "^4.19.0",
+    "mocha": "10.4.0"
+  }
+}
