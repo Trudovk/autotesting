@@ -1,5 +1,5 @@
 const assert = require("assert");
-const { Builder, By, Key, until, Browser } = require("selenium-webdriver");
+const { Builder, By, Browser } = require("selenium-webdriver");
 let total = 5;
 let remaining = 5;
 
@@ -7,6 +7,8 @@ async function example() {
   let driver = await new Builder().forBrowser(Browser.FIREFOX).build();
   try {
     await driver.get("https://lambdatest.github.io/sample-todo-app/");
+    const header = await driver.findElement(By.xpath("//h2")).getText();
+    assert.equal(header, "LambdaTest Sample App");
     let text = await driver
       .findElement(
         By.xpath(`//span[text()='${remaining} of ${total} remaining']`)
