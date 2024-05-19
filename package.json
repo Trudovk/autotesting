@@ -1,6 +1,10 @@
 {
   "dependencies": {
-    "selenium-webdriver": "^4.19.0",
-    "mocha": "10.4.0"
+    "chai": "^4.3.7",
+    "mocha": "^10.4.0",
+    "selenium-webdriver": "^4.19.0"
+  },
+  "scripts": {
+    "test": "mocha --recursive --timeout 600000"
   }
 }
