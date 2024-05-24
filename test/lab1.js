@@ -23,6 +23,9 @@ describe("Todo App Functionality", function () {
 
     for (let i = 1; i <= 5; i++) {
       await todoPage.markTodoItemDone(i);
+      await todoPage.liSpan(i);
+      remainingCountText = await todoPage.getRemainingCountText();
+      expect(remainingCountText).to.equal(`${5-i} of 5 remaining`);
     }
 
     remainingCountText = await todoPage.getRemainingCountText();

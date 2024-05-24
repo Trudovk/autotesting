@@ -7,8 +7,8 @@ class TodoPage {
     this.remainingCount = By.xpath("//span[contains(text(),' remaining')]");
     this.todoInput = By.id("sampletodotext");
     this.addButton = By.id("addbutton");
-    this.todoItemsDoneFalse = (index) =>
-      By.xpath(`//li[${index}]//span[@class='done-false']`);
+    this.liSpan = (index) =>
+      By.xpath(`//li[${index}]//span[@class='done-true']`);
     this.todoItems = (index) => By.name(`li${index}`);
   }
 
@@ -34,6 +34,7 @@ class TodoPage {
   async markTodoItemDone(index) {
     await this.driver.findElement(this.todoItems(index)).click();
   }
+
 }
 
 module.exports = TodoPage;
